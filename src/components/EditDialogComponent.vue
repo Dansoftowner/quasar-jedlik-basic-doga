@@ -10,10 +10,33 @@ function ShowDialog() {
 }
 
 function HideDialog() {
-    store.many.document = {};
+  store.many.document = {};
 }
 
 function Close() {
+  const diff = {};
+
+  Object.keys(store.many.document).forEach((k) => {
+    if (store.many.documentOld[k] != store.many.document[k]) diff[k] = store.many.document[k];
+  });
+
+  if (Object.keys(diff).length > 0) {
+    Dialog.create({
+      title: "Megerősítés",
+      message: "Szeretnéd elvetni a változásokat?",
+      ok: "Igen",
+      cancel: "Nem",
+      persistent: true,
+    })
+      .onOk(() => {
+        //store.many.document = { ...store.many.documentOld };
+        store.app.showEditDialog = false;
+      })
+      .onCancel(() => {});
+
+    return;
+  }
+
   store.app.showEditDialog = false;
 }
 
@@ -44,12 +67,12 @@ function Reset() {
     <q-card class="q-pa-md q-gutter-md" style="width: 60vw; min-width: 300px">
       <q-form @reset="Reset()" @submit="Submit()">
         <div class="q-gutter-md">
-          <h5 class="text-center">Új hírdetés hozzáadása</h5>
+          <h5 class="text-center">Hirdetés szerkesztése</h5>
           <q-input
             v-model="store.many.document.titleField"
             filled
             label="Cím"
-            :rules="[(v) => (v != null && v != '') || 'A hírdetés címe nem lehet üres!']"
+            :rules="[(v) => (v != null && v != '') || 'A hirdetés címe nem lehet üres!']"
             type="text"
           />
           <q-select

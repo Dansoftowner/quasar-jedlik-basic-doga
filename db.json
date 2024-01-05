@@ -41,16 +41,6 @@
       "imgField": "https://nitslaszlo.github.io/jedlik-frontend-starter/05.jpg"
     },
     {
-      "id": 6,
-      "categoryId": 7,
-      "titleField": "JEANNEAU SUN ODYSSEY 319",
-      "descField": "Sun Odyssey 319, 2020.05. Magyarországi első vízretétel, garanciális, tulajdonostól eladó! YANMAR 21LE motorral, Performance teljes latnis nagyvitorla X-Grid MYLAR TAFFETA anyagból, Performance roll Genoa X-Grid MYLAR TAFFETA anyagból, Lazy Jacks a nagyvitorlához, merev alba, német vitorlakezelési rendszer",
-      "dateField": "2022-03-04",
-      "boolField": true,
-      "priceField": 51000000,
-      "imgField": "https://nitslaszlo.github.io/jedlik-frontend-starter/06.jpg"
-    },
-    {
       "id": 7,
       "categoryId": 1,
       "titleField": "SUBARU IMPREZA 2.0 WRX STi Prodrive 340 Lóerő",

@@ -17,10 +17,10 @@ export interface IApp {
     pozitívGomb: string;
     negatívGomb: string;
     válasz?: boolean;
-  }
+  };
 }
 
-interface IOne {
+export interface IOne {
   id?: number;
   categoryNameField?: string;
 }
@@ -88,11 +88,11 @@ export const useStore = defineStore({
       filter: "",
       selectedMany: [],
       selectedOne: [],
-      yesNoComp:{
+      yesNoComp: {
         kérdés: "Igen vagy nem?",
         pozitívGomb: "Igen",
-        negatívGomb: "Nem"
-      }
+        negatívGomb: "Nem",
+      },
     },
   }),
   getters: {},
